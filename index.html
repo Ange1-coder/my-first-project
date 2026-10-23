@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Furniture Website</title>
+    <link rel="stylesheet" href=CSS\styles.css>
+  </head>
+  <body>
+  <!-- HERO SECTION (Full-Screen Video Background) -->
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="videos/Hero Furniture BG13.mp4" type=""video/mp4">
+    </video>
+
+    <div class="hero-content">
+      <h1>Your Place for Everything Furniture and Landscape</h1>
+      <p>We design and create inviting outdoor environments for your home and gatherings.</p>
+
+        <div class="hero-buttons">
+          <a href="#cards" class="btn">Learn More</a>
+          <a  href="#auth" class="btn btn-dark">CSS Cheatsheet</a>
+          <a href="#auth" class="btn btn-dark">JS Cheatsheet</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services /CARDS SECTION -->
+     <section id="cards" class="card-section">
+        <h2>Our Featured Services</h2>
+        
+      <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+          <img src="images/yard photo 1.jpg" alt="Shrubs and Plants">
+          <div class="card-content">
+          <h3>Schrubs and Plants</h3>
+          <p>Carfully selected greenery and flowering plants to bring to life and color your outdoor spaces.</p>
+            <a href="#">Read More</a>
+        </div>  
+      </div>
+
+        <!-- Card 2 -->
+         <div class="card">
+          <img src="images/yard photo 1 copy.jpg" alt="Backyard Coverings">
+          <div class="card-content">
+          <h3>Backyard Coverings</h3>
+          <p>Pergolas, shade sails, and patio covers that transforms your backyard into a comfortable retreat.</p>
+        <a href="#">Read More</a>  
+        </div>
+      </div>
+
+          <!-- Card 3-->
+            <div class="card">
+          <img src="images/Hero Landscaping BG11.jpeg" alt="Walking Paths">
+          <div class="card-content">
+          <h3>Backyard Coverings</h3>
+          <p>Beautifully laid pathways using natural stone, pavers, and creative landscape design.</p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+
+      <!-- Card 4-->
+            <div class="card">
+          <img src="images/yard photo 2 copy.jpg" alt="Patio Furniture">
+          <div class="card-content">
+          <h3>Patio Furniture</h3>
+          <p>Beautifully laid out patio furnitur for perfect backyard gatherings.</p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+
+            </div>
+     </section>
+     
+      <!-- Footer Section -->
+       <footer class="footer">
+        <p>&copy;n<span id="year"></span> VetBoss Furniture &amp; Landscape. All rights reserved.</p> 
+       </footer>
+
+       <!-- JAVASCRIPT SECTION -->
+        <script>
+          // Smooth scrolling for any link that starts with #
+            document.querySelectorAll('a[href^="#"]').forEach(function 
+            (anchor) {
+              anchor.addEventListener("click", function(e) {
+                e.preventDefault(); // Stop default jump behavior
+                var target = document.querySelector(this.getAttribute("href"));
+                if (target) {
+                  target.scrollIntoView({behavior: "smooth" }); // Smooth scroll animation
+                }
+              });
+            }); 
+
+            // Scroll-reveal animation for cards
+            var cards = document.querySelectorAll(".card");
+
+            function revealCards() {
+              var triggerBottom = window.innerHeight * 0.85; // Trigger point (85% down the screen) 
+              cards.forEach(function(card) {
+                var cardTop = card.getBoundingClientRect().top;
+                if (cardTop < triggerBottom) {
+                  card.classList.add("show"); // Add .show class to trigger CSS animation
+                }
+              });
+            }
+
+            // Run animation on scroll and once on page Load
+            window.addEventListener("scroll", revealCards);
+            revealCards();
+
+            // Dynamically insert current year in footer
+            document.getElementById("year").textContent = new Date().getFullYear();
+            </script>
+
+  </body>
+</html>
